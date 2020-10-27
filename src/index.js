@@ -1,17 +1,48 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { Component} from 'react'
+import {render} from 'react-dom'
+import Library from './Library'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+let bookList = [
+  {"title": "The Sun Also Rises", 
+  "author": "Ernerst Hemingway",
+  "pages": 260 
+  },
+  {"title": "White Teeth", 
+  "author": "Zadi Smith",
+  "pages": 480
+  },
+  {"title": "Cat's Cradle", 
+  "author": "Kurt V",
+  "pages": 304 
+  }
+]
+
+// class FavoriteColorForm extends React.Component {
+//   state={value: ''}
+//   newColor = e => 
+//     this.setState({value: e.target.value})
+//     submit = e => {
+//       console.log(`New Color: ${this.state.value}`)
+//       e.preventDefault()
+//     }
+//   render() {
+//     return (
+//       <form onSubmit= {this.submit}>
+//         <label>Favorite Color: 
+//           <input 
+//             type="color"
+//             onChange={this.newColor}
+//             ></input>
+//             <button>Submit</button>
+//         </label>
+//       </form>
+//     )
+//   }
+// }
+
+render (
+  <Library books={bookList} />
+  , 
   document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+)
